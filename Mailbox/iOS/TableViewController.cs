@@ -27,11 +27,16 @@ namespace Mailbox.iOS
         EmailServer emailserver = new EmailServer();
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
         {
-            UITableViewCell cell = new UITableViewCell(CGRect.Empty);
+            UITableViewCell cell = new UITableViewCell(UITableViewCellStyle.Subtitle, null);
             var item = emailserver.Email[indexPath.Row];
 
-            cell.TextLabel.Text = item.Subject;
+            cell.TextLabel.Font = UIFont.FromName("Helvetica Light", 14);
+            cell.DetailTextLabel.Font = UIFont.FromName("Helvetica Light", 12);
+            cell.DetailTextLabel.TextColor = UIColor.LightGray;
 
+            cell.TextLabel.Text = item.Subject;
+            cell.DetailTextLabel.Text = item.Body;
+            cell.ImageView.Image = item.GetImage();
             return cell;
         }
 
