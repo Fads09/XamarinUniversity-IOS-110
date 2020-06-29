@@ -26,7 +26,7 @@ namespace XamarinUniversity
 			instructors.Add(new Instructor()
 				{
 					Name      = "Adrian Stevens",
-					Specialty = "C# and C++ cross-platform development",
+					Specialty = "java and C++ cross-platform development",
 					ImageUrl  = "images/adrian-stevens.jpg",
 					Biography = "Adrian Stevens has over 14 years of experience developing mobile applications; specializing in C# & C++ cross platform development.  Prior to join Xamarin as an instructor, Adrian had released several very successful mobile applications developed using Xamarin.iOS & Xamarin.Android."
 				});

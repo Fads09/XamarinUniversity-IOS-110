@@ -22,9 +22,8 @@ namespace XamarinUniversity.Droid
 
             var data = FindViewById<ListView>(Resource.Id.instructorListView);
             data.ItemClick += OnItemClick;
-            var adapter = new ArrayAdapter<Instructor>(this, Android.Resource.Layout.SimpleListItem1, InstructorData.Instructors);
-            data.Adapter = adapter;
-            
+            data.Adapter = new InstructorAdapter(InstructorData.Instructors);
+
         }
 
         void OnItemClick(object sender, AdapterView.ItemClickEventArgs e)
