@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Widget;
 using Android.OS;
+using System;
 
 namespace XamarinUniversity.Droid
 {
@@ -20,8 +21,20 @@ namespace XamarinUniversity.Droid
             // and attach an event to it
 
             var data = FindViewById<ListView>(Resource.Id.instructorListView);
+            data.ItemClick += OnItemClick;
             var adapter = new ArrayAdapter<Instructor>(this, Android.Resource.Layout.SimpleListItem1, InstructorData.Instructors);
             data.Adapter = adapter;
+            
+        }
+
+        void OnItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            var instructor = InstructorData.Instructors[e.Position];
+
+            var dialog = new AlertDialog.Builder(this);
+            dialog.SetMessage(instructor.Name);
+            dialog.SetNeutralButton("OK", delegate { });
+            //dialog.Show();
         }
     }
 }
