@@ -46,6 +46,15 @@ namespace XamarinUniversity.Droid
 			// aapt resource value: 0x7F010000
 			public const int instructorListView = 2130771968;
 			
+			// aapt resource value: 0x7F010001
+			public const int nameTextView = 2130771969;
+			
+			// aapt resource value: 0x7F010002
+			public const int photoImageView = 2130771970;
+			
+			// aapt resource value: 0x7F010003
+			public const int specialtyTextView = 2130771971;
+			
 			static Id()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -60,7 +69,10 @@ namespace XamarinUniversity.Droid
 		{
 			
 			// aapt resource value: 0x7F020000
-			public const int Main = 2130837504;
+			public const int InstructorRow = 2130837504;
+			
+			// aapt resource value: 0x7F020001
+			public const int Main = 2130837505;
 			
 			static Layout()
 			{

@@ -34,7 +34,7 @@ namespace XamarinUniversity.Droid
             var dialog = new AlertDialog.Builder(this);
             dialog.SetMessage(instructor.Name);
             dialog.SetNeutralButton("OK", delegate { });
-            //dialog.Show();
+            dialog.Show();
         }
     }
 }
