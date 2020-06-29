@@ -11,16 +11,29 @@ namespace Mailbox.iOS
         }
 
         EmailServer emailserver = new EmailServer();
+        const string CellId = "EmailCell";
+
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
         {
-            UITableViewCell cell = new UITableViewCell(UITableViewCellStyle.Subtitle, null);
-            var item = emailserver.Email[indexPath.Row];
+            UITableViewCell cell = tableView.DequeueReusableCell(CellId);
+            if (cell == null )
+            {
+                cell = new UITableViewCell(UITableViewCellStyle.Subtitle, CellId);
+                cell.TextLabel.TextColor = UIColor.Blue;
+                cell.DetailTextLabel.TextColor = UIColor.LightGray;
+                cell.Accessory = UITableViewCellAccessory.DisclosureIndicator;
 
+            }
+            else if (cell.ImageView.Image != null)
+            {
+                cell.ImageView.Image.Dispose();
+            }
+
+            var item = emailserver.Email[indexPath.Row];
             cell.TextLabel.Font = UIFont.FromName("Helvetica Light", 14);
             cell.DetailTextLabel.Font = UIFont.FromName("Helvetica Light", 12);
-            cell.DetailTextLabel.TextColor = UIColor.LightGray;
+            
 
-            cell.Accessory = UITableViewCellAccessory.DisclosureIndicator;
             cell.TextLabel.Text = item.Subject;
             cell.DetailTextLabel.Text = item.Body;
             cell.ImageView.Image = item.GetImage();
