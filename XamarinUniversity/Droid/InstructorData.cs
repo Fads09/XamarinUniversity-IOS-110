@@ -13,12 +13,12 @@ namespace XamarinUniversity
 			var temp = new List<Instructor>();
 
 			AddInstructors(temp);
-			//AddInstructors(temp);
-			//AddInstructors(temp);
-			//AddInstructors(temp);
-			//AddInstructors(temp);
+            AddInstructors(temp);
+            AddInstructors(temp);
+            AddInstructors(temp);
+            AddInstructors(temp);
 
-			Instructors = temp.OrderBy(i => i.Name).ToList();
+            Instructors = temp.OrderBy(i => i.Name).ToList();
 		}
 
 		static void AddInstructors(List<Instructor> instructors)

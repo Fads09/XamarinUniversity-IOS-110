@@ -21,6 +21,7 @@ namespace XamarinUniversity.Droid
             // and attach an event to it
 
             var data = FindViewById<ListView>(Resource.Id.instructorListView);
+            data.FastScrollEnabled= true;
             data.ItemClick += OnItemClick;
             data.Adapter = new InstructorAdapter(InstructorData.Instructors);
 
